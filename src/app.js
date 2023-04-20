@@ -14,14 +14,14 @@ const server = http.createServer((req, res) => {
       if (Number.isInteger(value1) && Number.isInteger(value2)) {
         if (value1 <= 0) {
           res.writeHead(404, {'Content-type': 'text/plain' });
-          res.end('this is not a valid expression');
+          res.end('The operation cannot be performed');
         }
         else if (value2 < 0) {
           res.writeHead(404, {'Content-type': 'text/plain' });
-          res.end('this is not a valid expression');
+          res.end('The operation cannot be performed');
         }
         else {
-          const result = Math.pow(num1, num2);
+          const result = Math.pow(value1, value2);
           res.writeHead(200, {'Content-type':'text/plain'});
           res.end(`The result is ${result}`);
         }
